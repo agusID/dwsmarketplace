@@ -1,0 +1,44 @@
+RewriteEngine On
+
+#auth
+RewriteRule ^login$ index.php [L]
+RewriteRule ^logout$ interface.php?go=logout
+
+RewriteRule ^home$ interface.php [L]
+RewriteRule ^category$ interface.php?go=category [L]
+RewriteRule ^product$ interface.php?go=product [L]
+RewriteRule ^order$ interface.php?go=order [L]
+RewriteRule ^bank$ interface.php?go=bank [L]
+RewriteRule ^customer$ interface.php?go=customer [L]
+RewriteRule ^slideshow$ interface.php?go=slideshow [L]
+RewriteRule ^discount$ interface.php?go=discount [L]
+RewriteRule ^api$ interface.php?go=api [L]
+RewriteRule ^approve-([0-9]*)$ interface.php?go=order&approve&id=$1 [L]
+
+#pagination url
+RewriteRule ^customer.page=([0-9]*)$ interface.php?go=customer&page=$1 [L]
+RewriteRule ^category.page=([0-9]*)$ interface.php?go=category&page=$1 [L]
+RewriteRule ^product.page=([0-9]*)$ interface.php?go=product&page=$1 [L]
+RewriteRule ^order.page=([0-9]*)$ interface.php?go=order&page=$1 [L]
+RewriteRule ^slideshow.page=([0-9]*)$ interface.php?go=slideshow&page=$1 [L]
+RewriteRule ^bank.page=([0-9]*)$ interface.php?go=bank&page=$1 [L]
+RewriteRule ^api.page=([0-9]*)$ interface.php?go=api&page=$1 [L]
+RewriteRule ^discount.page=([0-9]*)$ interface.php?go=discount&page=$1 [L]
+
+#delete links
+RewriteRule ^delete-product-([0-9]*)$ interface.php?go=product&hapus&id=$1 [L]
+RewriteRule ^delete-category-([0-9]*)$ interface.php?go=category&delete&id=$1 [L]
+RewriteRule ^delete-customer-([0-9]*)$ interface.php?go=customer&hapus&id=$1 [L]
+RewriteRule ^delete-bank-([0-9]*)$ interface.php?go=bank&delete&id=$1 [L]
+RewriteRule ^delete-category-([0-9]*)$ interface.php?go=category&delete&id=$1 [L]
+RewriteRule ^delete-slide-([0-9]*)$ interface.php?go=slideshow&delete&id=$1 [L]
+RewriteRule ^remove-discount-([0-9]*)$ interface.php?go=discount&delete&id=$1 [L]
+RewriteRule ^delete-order-([0-9]*)$ interface.php?go=order&hapus&id=$1 [L]
+RewriteRule ^remove-api-([0-9]*)$ interface.php?go=api&delete&id=$1 [L]
+
+#edit links
+RewriteRule ^category.([0-9]*).edit$ interface.php?go=category&edit&id=$1 [L]
+RewriteRule ^product.([0-9]*).edit$ interface.php?go=product&edit&id=$1 [L]
+RewriteRule ^bank.([0-9]*).edit$ interface.php?go=bank&edit&id=$1 [L]
+
+Options All -Indexes

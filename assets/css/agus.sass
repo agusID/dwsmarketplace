@@ -1,0 +1,1886 @@
+/* LESS Document created by Dwi Agustianto */
+$whiteColor: #ffffff
+$greyColor: rgb(150, 150, 150)
+
+@import 'reset'
+@import 'animate'
+
+@mixin animation($animation) 
+	-webkit-animation: $animation
+	-moz-animation: $animation
+	-ms-animation: $animation
+	animation: $animation
+
+body
+	margin: 0 auto
+	height: auto
+	width: 100%
+	font: normal 14px 'Helvetica Neue', Arial, sans-serif
+	background-color: #F2F3F7
+	overflow-x: hidden
+.left
+	float: left
+.right
+	float: right
+.center
+	text-align: center
+.greyColor
+	color: $greyColor
+
+.btnRipple
+	position: relative
+	overflow: hidden
+
+.btnRipple:after
+	content: ''
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 5px
+	height: 5px
+	background: rgba(255,255,255, .5)
+	opacity: 0
+	border-radius: 100%
+	transform: scale(1,1) translate(-50%)
+	transform-origin: 50% 50%
+
+.btnRipple:focus:not(:active)::after
+	@include animation(ripple 1s ease-out)
+
+.btnPrimary
+	cursor: pointer
+	width: 126px
+	margin: 15px 0
+	margin-bottom: 0
+	/* transition: all 0.2s ease-out */
+	color: $whiteColor
+	border-radius: 2px
+	width: 126px
+	padding: 10px 10px
+	text-align: center
+	border: 1px solid #2b455c
+	background-color: #2b455c
+
+.btnDisable
+	color: $whiteColor
+	border-radius: 2px
+	padding: 10px 10px
+	text-align: center
+	margin: 15px 0
+	margin-bottom: 0
+	border: 1px solid #c5c5c5
+	cursor: pointer
+	pointer-events: none
+	background-color: #c5c5c5
+	float: right
+
+.btnPrimary:hover
+	background-color: white
+	color: #27ae60
+	border: 1px solid #27ae60
+
+.btnConfirm
+	padding: 4px 10px
+	color: #fff
+	background-color: #42b549
+	border: 1px solid #42b549
+	border-radius: 3px
+	font-size: 11px
+.btnConfirm:hover
+	background-color: #4fa149
+	border-color: #4fa149
+	color: #fff
+.container
+	padding-top: 15px
+	overflow: hidden
+
+.hide
+	display: none
+
+.show
+
+.block
+	display: block
+	
+.isHover
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px
+	color: rgb(127, 127, 127)
+	background-color: $whiteColor
+.bold
+	font-weight: bold
+.note
+	color: #999
+	font-size: 12px
+	margin: 5px 0
+
+
+.auth
+	display: inline-block
+	margin: 12.5px 0
+	float: right
+	#btnLogin
+		border-radius: 5px 0 0 5px
+		padding: 11.5px 10px
+		text-align: center
+		color: #ff5722
+		border: 1px solid #ff5722
+		font-size: 14px
+		transition: all 0.2s ease-out
+
+	#btnLogin:hover
+		color: $whiteColor
+		background-color: #ff5722
+
+	#btnRegister
+		border-radius: 0 5px 5px 0
+		padding: 11.5px 10px
+		text-align: center
+		color: #ff5722
+		border: 1px solid #ff5722
+		border-left: none
+		font-size: 14px
+		transition: all 0.2s ease-out
+
+	#btnRegister:hover
+		color: $whiteColor
+		background-color: #ff5722
+
+.accountLogged ul li
+	position: relative
+
+.headerContainer
+	height: 125px
+	width: 100%
+	@extend .block
+	background-color: $whiteColor
+
+header
+	width: 100%
+	z-index: 9999
+	background-color: rgba(255,255,255, 0.8)
+	border-bottom: solid #ddd 3px
+
+header:before
+	content: ""
+	background-color: rgba(255,255,255, 0.8)
+	padding: 15px 0
+	filter: blur(10px)
+	height: 40px
+	width: 100%
+	position: absolute
+	top: 0
+	z-index: -1
+
+.wrapper
+	width: 1138px
+	margin: 0 auto
+
+.col-4
+	width: 25%
+	float: left
+
+.col-5
+	width: 20%
+	float: left
+
+.col-7
+	width: 70%
+	float: left
+
+.col-3
+	width: 30%
+	float: left
+
+header 
+
+	display: block
+	.SearchContainer
+		height: 42px
+		@extend .block
+		padding: 10px 0
+		width: 100%
+
+	.brandLogo 
+		img
+			margin-right: 20px
+
+	.searchBox
+		background-color: #f1f1f1
+		padding: 10px 0px 10px 8px
+		width: 475px
+		outline: none
+		border: solid 1px #f1f1f1
+		border-radius: 5px 0 0 5px
+		border-right: none
+		float: left
+
+		.txtSearch
+			border: none
+			outline: none
+			font-size: 14px
+			padding: 0 2px
+			font-weight: 100
+			height: 20px
+			width: calc(100% - 155px)
+			display: inline-block
+			background-color: transparent
+			clear: both
+
+		.txtSearch::placeholder
+			color: #818181
+
+		.search_icon
+			background: url(../images/search_icon.png) no-repeat
+			background-size: 16px 16px
+			background-position: 2px 2.5px
+			width: 20px
+			height: 20px
+			opacity: 0.4
+			display: inline-block
+			float: left
+			z-index: 3
+
+	img
+		float: left
+
+	.CategoryBox
+		padding: 0px 5px
+		outline: none
+		height: 20px
+		width: 110px
+		border-radius: 0px
+		border-left: none
+		border-right: none
+		clear: both
+		display: inline-block
+
+	.cmbSearch
+		background-color: transparent
+		height: 20px
+		width: 100%
+		outline: none
+		margin-right: 0
+		border: none
+		color: #818181
+
+	.btnSearch
+		padding: 11.5px 20px
+		border-radius: 0px 5px 5px 0
+		background-color: #ff5722!important
+		border: solid 1px #ff5722!important
+		color: $whiteColor
+		font-size: 14px
+		cursor: pointer
+		transition: all 0.2s ease-out
+		float: left
+
+	.btnSearch:hover
+		background-color: #e24e21!important
+		border-color: #e24e21!important
+
+	.cart
+		color: #333
+		background-color: transparent
+		width: 100px
+		height: 42px
+		float: left
+		margin-left: 10px
+		cursor: pointer
+
+		.cartList
+			position: absolute
+			width: 300px
+			margin-left: -140px
+			height: auto
+			padding: 10px 20px 20px 20px
+			display: none
+			background-color: white
+			z-index: 99999 
+			border: solid 1px #eeeeee
+			border-radius: 2px
+			box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14)
+			@include animation(fade 1s)
+			.header
+				color: #3A3A39
+				letter-spacing: .5px
+				padding: 10px 0
+				font-size: 16px
+				text-align: center
+				border-bottom: 1px solid #eeeeee
+			li
+				position: relative
+				.ProductCartName
+					font-size: 12px
+					padding-left: 10px
+					color: #555555
+				.ProductCartImage
+					width: 50px
+					border: solid 1px #eeeeee
+					margin: 2px 0
+					border-radius: 50%
+					padding: 5px
+				.TotalItem
+					padding: 5px 0
+					font-size: 12px
+				.TotalPrice
+					padding: 5px 0
+					font-size: 12px
+				table
+					padding: 10px 0
+					line-height: 1.5
+
+		.btnViewCart
+			background-color: #ffffff
+			color: #333
+			border-radius: 20px
+			padding: 10px
+			text-align: center
+			margin: 10px 0
+			margin-bottom: 0
+			border: 1px solid #ccc
+			transition: all .2s ease-out
+			display: block
+			font-size: 12px
+			cursor: pointer
+
+		.btnViewCart:hover
+			background-color: #f9f9f9
+		.btnCheckOutCart
+			background-color: rgb(249, 105, 14)
+			color: #fff
+			border-radius: 20px
+			padding: 10px
+			text-align: center
+			margin: 10px 0
+			margin-bottom: 0
+			border: 1px solid #f7931e
+			transition: all .2s ease-out
+			display: block
+			font-size: 12px
+			cursor: pointer
+
+		.btnCheckOutCart:hover
+			opacity: 0.8
+	.cart:hover > .cartList
+		display: block
+		
+	.cartImage
+		width: 60px
+		background-color: #CCC
+		border: solid 1px transparent
+		background: url(../images/cart.png) no-repeat
+		background-size: 45px 40px
+		opacity: 0.8
+		margin-top: 2px
+		height: 40px
+		display: inline-block
+
+	.cartItem
+		background-color: rgb(231, 24, 24)
+		border-radius: 1px
+		color: $whiteColor
+		border: 1px solid white
+		width: 20px
+		height: 20px
+		line-height: 1.6
+		text-align: center
+		border-radius: 50%
+		font-size: 12px
+		float: right
+
+	.cartLabel
+		color: #333
+		position: absolute
+		padding: 11px 0
+		padding-top: 15px
+		padding-bottom: 5px
+		height: 20px
+		display: inline-block
+		font-weight: bold
+.Profile
+	float: right
+	cursor: pointer
+	.ProfilePicture
+		img
+			width: 40px
+			height: 40px
+			border-radius: 50%
+			margin: 2px 0
+
+	.ProfileMenu
+		position: absolute
+		width: 150px
+		margin-left: -110px
+		height: auto
+		display: none
+		background-color: white
+		z-index: 99999 
+		border: solid 1px #eeeeee
+		border-radius: 2px
+		box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14)
+		@include animation(fade 1s)
+		margin-top: 40px
+		padding: 5px 0 8px 0
+
+		.MyProfileLabel
+			color: rgba(0,0,0,.38)
+			font-size: 10px
+		.ProfileName
+			color: rgba(0,0,0,.8)
+		li 
+			a
+				display: block
+				color: rgba(0,0,0,.54)
+				padding: 5px 10px
+		li:first-child
+			border-bottom: solid 1px #eeeeee
+			a
+				padding: 10px 10px
+				padding-top: none
+		li:first-child:hover
+			.ProfileName
+				color: #f66f04
+				
+		li:hover >
+			a
+				color: #f66f04
+.Profile:hover .ProfileMenu
+	display: block
+/* Slider */
+#slider 
+	position: relative
+	overflow: hidden
+	border-radius: 4px
+	background-color: black
+	width: 100%
+	height: 400px
+
+	ul
+		position: relative
+		margin: 0
+		padding: 0
+		height: 400px
+		list-style: none
+
+		li 
+			position: relative
+			display: block
+			float: left
+			margin: 0
+			padding: 0
+			width: calc(800px - 10px)
+			height: 400px
+			background: #ccc
+
+			img
+				width: 100%
+				height: 400px
+
+div.control_prev, div.control_next 	
+	position: absolute
+	top: 160px
+	z-index: 1
+	display: none
+	color: #fff
+	text-decoration: none
+	font-weight: 100
+	font-size: 18px
+	cursor: pointer
+	height: 70px
+	width: 45px
+	-webkit-transition: all 0.2s ease
+
+#slider:hover > div.control_prev, #slider:hover > div.control_next 
+	display: block
+	-webkit-transition: all 0.2s ease
+
+div.control_prev:hover, div.control_next:hover
+	background-color: rgba(0,0,0, 0.1) 
+
+div.control_prev 
+	border-radius: 5px
+	left: 10px
+
+div.control_next 
+	right: 10px
+	border-radius: 5px
+
+.arrows
+	width: 28px
+	height: 28px
+	border-color: #000
+	position: absolute
+	margin-top: 20px
+	
+.prev
+	border-bottom: 3px solid
+	border-left: 3px solid
+	transform: rotate(45deg)
+	left: 15px
+	border-radius: 0 0 0 2px
+
+.next
+	border-bottom: 3px solid
+	border-left: 3px solid
+	transform: rotate(-135deg)
+	right: 15px
+	border-radius: 0 0 0 5px
+
+.sliderContainer
+	@extend .block
+	min-height: 400px
+
+.slider 
+	margin: 0 auto
+	list-style: none
+	white-space: nowrap
+	word-spacing: -2px
+	letter-spacing: -2px
+	overflow: hidden
+
+	li 
+		width: 100%
+		display: inline-block
+
+	img
+		height: 100%
+		width: 100%
+
+.rightTopSlider, .rightTopSlider 
+	li 
+		height: calc(200px - 2px)
+		margin-top: 0
+		margin-bottom: 4px
+
+.rightBottomSlider, 
+.rightBottomSlider li 
+	height: calc(200px - 2px)
+
+.rightTopSlider img, .rightBottomSlider img
+	width: 100%
+
+.rightTopSlider li:first-child 
+	@include animation(slider 33s ease-out infinite)
+
+.rightBottomSlider li:first-child 
+	@include animation(slider 15s ease-out infinite)
+
+.paging 
+	.prevnext a
+		padding: 5px 20px
+		border: solid 1px #dddddd
+		border-radius: 3px
+		color: #333
+
+	.disabled
+		padding: 5px 20px
+		border: solid 1px #dddddd
+		border-radius: 3px
+		color: #ddd
+
+	.current_aktif 
+		a
+			padding: 5px 10px
+			border: solid 1px #dddddd
+			border-left: none
+			background-color: $whiteColor
+			border-radius: 3px
+			color: #999
+
+	.current
+		padding: 5px 10px
+		border: solid 1px #dddddd
+		border-left: none
+		background-color: #f5f5f5
+		border-radius: 3px
+		color: #999
+
+.crumb
+	width: 100%
+	margin-bottom: 10px
+	display: none
+
+	p
+		margin: 0 auto
+		background-color: #fdfdfd
+	
+.judul
+	width: 100%
+
+	p 
+		a
+			font-size: 15px
+			color: #999
+			float: right
+
+.ProductContainer
+	overflow: hidden
+	min-height: 200px
+	@extend .block
+
+.kategori
+	width: 24%
+	background-color: $whiteColor
+	float: left
+	overflow: hidden
+	margin-right: 1%
+
+	ul
+		margin: 0 auto
+		list-style: none
+
+		li
+			margin: 0 auto
+			position: relative
+
+			a
+				@extend .block
+				color: #333
+				border: 1px solid #ddd
+				border-top: none
+				padding: 10px 10px
+
+			a:hover 
+				background-color: #eeeeee
+
+.ProductContainer2
+	width: 75%
+	float: left
+	background-color: $whiteColor
+	overflow: hidden
+
+.CategoryLabel 
+	color: $whiteColor
+	font-size: 16px
+	background-color: #f7931e
+	text-transform: uppercase
+	max-width: 200px
+	position: relative
+	margin-top: 10px
+	border: none
+	border-left: 5px solid #ccc
+	padding-left: 10px
+	@extend .block
+	background-color: transparent
+	margin-top: 20px
+	color: #999
+
+.CategoryLabel strong
+	font-weight: 500
+	color: #4a4a4a
+
+.CategoryLabel:before 
+	content: ""
+	width: 200px
+	height: 1px
+	background-color: #ccc
+	margin-bottom: 10px
+	margin-left: -15px
+	display: block
+
+.CategoryLabel:after 
+	content: ""
+	width: 200px
+	height: 1px
+	background-color: grey
+	margin-top: 10px
+	margin-left: -15px
+	display: block
+
+.ProductItem
+	background-color: $whiteColor
+	border-radius: 2px
+	text-align: center
+	margin: 15px
+	margin-right: 10px
+	position: relative
+	transition: all 0.1s ease-out
+	padding: 10px
+	border: solid 1px #e9e9e9
+	height: 270px
+	font-family: Helvetica
+	cursor: default
+
+.ProductItem img
+	transition: all 0.2s ease-out
+
+.ProductItem:hover .ProductPrice,.ProductItem:hover .DiscountPrice,.ProductItem:hover img, .ProductItem:hover .DiscountLabel, .ProductItem:hover .ProductName
+	filter: blur(3px)
+
+.ProductItem:hover img
+	// transform: scale(1.05)
+	opacity: 0.5
+	
+.ProductItem .DiscountLabel
+	width: 35px
+	height: 20px
+	padding: 5px 5px 5px 10px
+	display: flex
+	-webkit-box-pack: center
+	-ms-flex-pack: center
+	justify-content: center
+	-webkit-box-align: center
+	-ms-flex-align: center
+	align-items: center
+	background-color: #2aa75e
+	position: absolute
+	bottom: 8px
+	right: 10px
+	z-index: 1
+	color: $whiteColor
+	font-size: 14px
+	text-align: center
+	font-weight: 500
+	line-height: 1
+
+.DiscountLabel 
+	text-rendering: optimizeLegibility
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	-webkit-text-size-adjust: 100%
+	position: relative
+	display: inline-block
+	background: #2aa75e
+	width: auto
+	height: 30px
+	line-height: 32px
+	font-size: 16px
+	font-weight: bold
+	color: #e57373
+	text-align: center
+	border-radius: 4px
+	padding: 0 15px
+
+.DiscountLabel:after 
+	content: " "
+	height: 23px
+	width: 23px
+	background: #2aa75e
+	position: absolute
+	top: 3.5px
+	left: -8px
+	border-radius: 4px
+	-moz-transform: rotate(45deg)
+	-o-transform: rotate(45deg)
+	-ms-transform: rotate(45deg)
+	-webkit-transform: rotate(45deg)
+	transform: rotate(45deg)
+	z-index: -1
+
+.DiscountLabel:before 
+	content: ""
+	width: 5px
+	height: 5px
+	background: #f1f1f1
+	position: absolute
+	top: 13px
+	left: 1px
+	z-index: 1
+	border-radius: 10px
+
+.ProductItem 
+	.ProductImage
+		width: 99%
+		height: 170px
+
+.ProductItem div
+	padding: 3px 0
+	@extend .block
+
+.ProductName
+	padding: 10px 0
+	@extend .block
+	font-size: 12px
+	text-align: left
+	color: #666
+	font-weight: 300
+	font-size: 12px
+	line-height: 1.4
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	text-shadow: 1px 1px 1px rgba(0,0,0,.004)
+
+.DiscountPrice
+	text-align: left
+	font-size: 10px
+	height: 16px
+	width: 100%
+	color: #9c9c9c
+	text-decoration: line-through
+
+.ProductPrice
+	text-align: left
+	font-size: 16px
+	color: #4a4a4a
+
+.ProductItem .btnBuy
+	background-color: rgba(255,255,255, 0.9)
+	display: none
+	cursor: pointer
+	border: solid 1px #ccc
+	padding: 8px 20px
+	border-radius: 2px
+	position: absolute
+	right: 20px
+	left: 20px
+	top: calc(50% - 14px)
+	font-size: 12px
+	text-transform: uppercase
+	color: #4a4a4a
+	transition: all 0.2s ease-out
+
+.ProductItem .btnBuy:hover
+	color: #ff5722
+	border-color: #ff5722
+.ProductItem:hover
+	border: solid rgb(214, 214, 214) 1px
+
+.ProductItem:hover .btnBuy
+	@extend .block
+	
+.PaymentMethod
+	@extend .block
+	padding: 10px 0
+
+.PaymentMethod img
+	width: 100%
+
+@keyframes mantul
+	0%
+		top: -10px
+		opacity: 0
+	50%
+		top: 110%
+		opacity: 0.6
+	70%
+		top: 80%
+		opacity: 1
+	100%
+		top: 100%
+		opacity: 1
+
+@-webkit-keyframes mantul
+	0%
+		top: -10px
+		opacity: 0
+	50%
+		top: 110%
+		opacity: 0.6
+	70%
+		top: 80%
+		opacity: 1
+	100%
+		top: 100%
+		opacity: 1
+
+nav
+	z-index: 1000
+	height: 40px
+	width: 100%
+	font-size: 12px
+	line-height: 20px
+	@extend .block
+	padding-top: 10px
+
+	ul
+		margin: 0 auto
+		list-style: none
+
+		.categoryList
+			border-radius: 0 0 2px 
+			display: none
+			max-height: 300px
+			overflow-y: scroll
+			position: absolute
+			box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px
+			background-color: rgb(240, 240, 240)
+			z-index: 9999
+
+		li
+			float: left
+			position: relative
+
+			a 
+				text-transform: uppercase
+				@extend .block
+				padding: 10px 20px 10px 20px
+				color: #eb912c
+				border-bottom: 3px solid transparent
+
+		li:first-child 
+			background-color: rgb(245, 245, 245)
+
+			a
+				color: rgb(92, 91, 91)
+				padding-left: 35px
+
+	.categoryMenu:before
+		content: ""
+		position: absolute
+		left: 15px
+		top: 16px
+		width: 1em
+		height: 0.16em
+		background: rgb(127, 127, 127)
+		box-shadow: 0 0.25em 0 0 rgb(127, 127, 127), 0 0.5em 0 0 rgb(127, 127, 127)
+		transition: all 0.2s ease-out
+
+nav 
+	ul 
+		.categoryList 
+			li
+				float: left
+
+				span.arrow
+					height: 0
+					width: 0
+					border: 4px solid transparent
+					border-top: 7px solid #000
+					top: 17px
+					position: absolute
+					right: 5px
+					transition: all 0.3s esae-out
+
+			li:nth-child(n) > a
+				@extend .block
+				width: 150px
+				padding: 5px 15px
+				color: #555
+				transition: all 0.3s ease-out
+				text-transform: capitalize
+				border: none
+				border-left: 3px solid transparent
+				background-color: rgb(240, 240, 240)
+
+		li:hover > ul
+			@extend .block
+			@include animation(mantul 1s)
+
+		li:hover > a,nav ul li.active > a
+			color: #ff5722
+			border-color: #ff5722
+			transition: all 0.2s ease-out
+
+		li:first-child:hover > a
+			border-color: rgb(240, 240, 240)
+			background-color: rgb(240, 240, 240)
+			color: rgb(92, 91, 91)
+			transition: all 0.2s ease-out
+
+		li:first-child:hover > .categoryMenu:before
+			background: rgb(92, 91, 91)
+			box-shadow: 0 0.25em 0 0 rgb(92, 91, 91), 0 0.5em 0 0 rgb(92, 91, 91)
+
+		li:hover > a span.arrow
+			height: 0
+			width: 0
+			border: 5px solid transparent
+			border-bottom: 7px solid $whiteColor
+			top: 10px
+			position: absolute
+			right: 5px
+			transition: all 0.3s ease-out
+
+		ul li:nth-child(n):hover > a
+			background-color: rgb(224, 224, 224)
+			border-color: #ff5722
+			color: #ff5722
+			transition: all 0s ease-out
+
+nav ul > label.switch 
+	width: 100%
+	height: 20px
+	padding: 10px
+	display: none
+	color: $whiteColor
+	text-align : center
+	cursor: pointer
+
+nav ul > label.switch:before
+	content: ""
+	@extend .block
+	width: 25px
+	height: 3px
+	background-color: $whiteColor
+	box-shadow: 0 8px $whiteColor, 0 16px $whiteColor
+
+nav ul > .switchbox
+	display: none
+
+@-webkit-keyframes m
+	from 
+		opacity: 0
+		transform: translate(0,-100px)
+	to
+		opacity: 1
+		transform: translate(0,0)
+
+@media screen and (max-width:400px)
+	.wrapper
+		width: 98%
+	
+	nav 
+		ul 
+			padding-left: 0
+			width: 100%
+			position: absolute
+
+			li
+				background-color: rgba(0,0,0, .60)
+				color: $whiteColor
+
+				a
+					color: $whiteColor		
+					padding: 10px 20px
+					display: block
+		ul > li
+			display: none
+			width: 100%
+		
+	nav ul label.switch, nav ul .switchbox:checked ~ li
+		display: block
+		
+	.slider, .slider li 
+		width: 100%
+		height: 200px
+		overflow: hidden
+	
+	.col-5
+		width: 100%
+
+footer:after
+	content: ""
+	width: 400px
+	background: url('../images/batik.png')
+	background-size: 100%
+	background-repeat: no-repeat
+	height: 200px
+	background-color: yellow
+	display: block
+	position: absolute
+	right: 0
+	transform: rotateY(180deg)
+	margin-top: -200px
+	opacity: 0.5
+	
+footer
+	margin: 0 auto
+	width: 100%
+	display: block
+	float: left
+	overflow: hidden
+	margin-top: 50px
+	background-color: #ffffff	
+	border-top: 1px solid #e0e0e0
+
+	.f_child
+		font-weight: 200
+		width: 25%
+		float: left
+		margin-top: 20px
+		color: #909090
+
+		article
+			padding: 10px 30px 20px 0
+			line-height: 1.5
+
+		span
+			font-size: 13px
+			font-weight: 500
+			color: #333
+
+		ul
+			margin: 0 auto
+			list-style: none
+			padding-top: 5px
+
+			li
+				position: relative
+
+				a
+					padding: 5px 0
+					@extend .block
+					color: #909090
+					font-size: 13px
+					pointer-events: none
+					cursor: pointer 
+				a:hover
+					color: #ff5722
+	p
+		padding-bottom: 20px
+
+	.copyright
+		margin: 0 auto
+		line-height: 1.5
+		@extend .block
+		text-align: left
+		border-top: 1px solid #e0e0e0
+		font-weight: 100
+		font-size: 20px
+
+	.copy
+		color: rgb(140, 140, 140)
+
+#serverTIme
+	font-size: 10px
+	color: rgb(154, 154, 154)
+
+.MediaSocial 
+	list-style: none
+	padding: 10px 0
+	transform: translateX(-42px) scale(0.7)
+	margin-left: 0
+
+.MediaSocial li 
+	display: inline-block
+	
+.MediaSocial a 
+	background-image: url(../images/social-icons.png)
+	background-image: url(../images/social-icons.svg), none /* IE8 does not support multiple backgrounds (even when it is empty), so reverts to the former rule with the .png */
+	background-repeat: no-repeat
+	@extend .block
+	height: 49px
+	width: 50px
+
+.MediaSocial a:hover 
+	opacity: 0.8
+
+.facebook 
+	background-position: -53px 0
+
+.twitter 
+	background-position: 0 0 
+
+.google
+	background-position: -106px -58px
+
+.pinterest 
+	background-position: -159px 0
+
+.ProductDetailContainer
+	background-color: $whiteColor
+	border: solid 1px #ebebeb
+	overflow: hidden
+
+.ProductDetailTitle
+	padding: 10px 2px
+	@extend .block
+	font-size: 20px
+	color: #555
+
+.ProductDetailCategory
+	padding: 0 2px
+	padding-bottom: 10px
+	@extend .block
+	font-size: 14px
+	color: #555
+	font-weight: 400
+
+.ProductDetailCategory a
+	color: #f7931e
+
+.detail_produk_wrapper
+	width: 100%
+
+.ProductDetailImage
+	width: 30%
+	float: left
+
+	.kotak_gbr
+		padding: 10px
+
+	img
+		width: calc(100% - 20px)
+		margin: 10px
+
+.ProductDetail .btnCart
+	padding: 10px 20px
+	color: white
+	outline: none
+	font-size: 14px
+	background-color: #f7931e
+	border: none
+	cursor: pointer
+	transition: all 0.3s ease-out
+
+.ProductDetail .btnCart:hover
+	opacity: 0.8
+
+.ProductDetail .ProductDetailPrice
+	font-size: 20px
+	font-weight: 500
+
+.ProductInfo
+	background-color: white
+	width: calc(100% - 2px)
+	overflow: hidden
+	border-left: solid 1px #ebebeb
+	border-right: solid 1px #ebebeb
+
+.ProductDetail .ProductDescription
+	background-color: white
+	padding: 10px
+	overflow: hidden
+	width: 50%
+	display: inline-block
+	float: left
+
+.ProductDetail .ProductReview
+	background-color: white
+	padding: 10px
+	overflow: hidden
+	width: calc(50% - 45px)
+	display: inline-block
+	float: left
+	border-left: solid 1px #ebebeb
+
+.ProductReview
+	background-color: white
+	padding: 10px
+.ProductReviewInfo
+	padding: 10px 10px
+	display: block
+	line-height: 1.5
+.ProductReviewTitle, .ProductDescriptionTitle
+	margin: 25px 0 15px
+	padding: 10px
+	background: #f1f1f1
+	text-align: left
+
+.detail_info
+	width: 60%
+	float: left
+	border-left: 1px #ccc solid
+	padding: 10px
+	margin-top: 20px
+	line-height: 25px
+	min-height: 250px
+
+.keranjang
+	background-color: $whiteColor
+	margin-bottom: 50px
+
+.keranjang table
+	border-collapse: collapse
+	width: 100%
+
+.keranjang th
+	background-color: #fdfdfd
+	border: solid 1px #ccc
+	padding: 5px 10px
+	text-align: left
+
+.keranjang td
+	padding: 5px 10px
+	border-bottom: solid 1px transparent
+
+#login 
+	position: absolute
+	visibility: hidden
+	opacity: 0
+	margin-top: -50px
+
+#register 
+	position: absolute
+	visibility: hidden
+	opacity: 0
+	margin-top: -50px
+
+#login:target 
+	position: fixed
+	visibility: visible
+	opacity: 1
+	background-color: rgba(0,0,0,0.8)
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 9999999
+	-webkit-transition: all 1s
+	-moz-transition: all 1s
+	transition: all 1s
+
+#register:target 
+	position: fixed
+	visibility: visible
+	opacity: 1
+	background-color: rgba(0,0,0,0.8)
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 9999999
+	-webkit-transition: all 1s
+	-moz-transition: all 1s
+	transition: all 1s
+
+@media (min-width: 768px)
+	.popup-container 
+		width: 380px
+
+@media (max-width: 767px)
+	.popup-container 
+		width: 98%
+
+.popup-container 
+	position: relative
+	margin: 0 auto
+	margin-top: 100px
+	padding: 30px
+	width: 360px
+	background-color: $whiteColor
+	color: #333
+	box-shadow: 0 1px 6px #333
+	border-radius: 6px
+
+	h3
+		font-weight: 300
+		font-size: 20px
+
+	.btnPopUpLogin
+		background-color: #f7931e
+		color: $whiteColor
+		border-radius: 2px
+		width: 100%
+		padding: 10px 0
+		text-align: center
+		margin-bottom: 0
+		border: none
+		cursor: pointer
+		outline: none
+		font-size: 15px
+		
+	.btnPopUpLogin:hover
+		opacity: 0.9
+
+	.LoginImage
+		width: 200px
+		border-radius: 50%
+		margin-bottom: 20px
+
+		img
+			width: 200px
+
+	.btnPopUpCancel
+		background-color: transparent
+		color: rgb(94, 94, 94)
+		border-radius: 2px
+		width: 100%
+		padding: 10px 0
+		text-align: center
+		margin-bottom: 0
+		border: 1px solid #ccc
+		cursor: pointer
+		transition: all 0.3s ease-out
+		outline: none
+		margin-top: 10px
+		font-size: 15px
+
+.popup-container .btnPopUpCancel:hover
+	background-color: #f1f1f1
+
+a.popup-close 
+	position: absolute
+	top: 10px
+	right: 10px
+	padding: 7px 10px
+	font-size: 13px
+	text-decoration: none
+	line-height: 1
+	color: #ccc
+
+.col-input
+	position: relative
+
+.popup-container 
+	.txtUser, .txtEmail, .txtPhone, .txtPassword
+		@extend .block
+		width: 100%
+		border-radius: 2px
+		border: solid 1px #ddd
+		border-top: none
+		border-left: none
+		border-right: none
+		position: relative
+		padding: 10px
+		padding-left: 30px
+		outline: none
+		font-size: 14px
+		font-weight: 100
+		margin: 20px 0
+		box-sizing: border-box
+		letter-spacing: 1px
+
+	.txtUser
+		background: url('../images/user-icon.png') no-repeat
+		background-position: 0 8px
+
+	.txtEmail
+		background: url('../images/mail-icon.png') no-repeat
+		background-position: 0 8px
+
+	.txtPhone
+		background: url('../images/phone-icon.png') no-repeat
+		background-position: 0 8px
+		opacity: 0.8
+
+	.txtPassword
+		background: url('../images/password-icon.png') no-repeat
+		background-position: 0 7px
+
+	.alreadyHaveAnAccount
+		margin-bottom: 10px
+		color: rgb(119, 119, 119)
+		font-weight: 200
+
+		a
+			color: #f7931e
+			text-decoration: underline
+
+	.agreement
+		text-align: center
+		font-size: 12px
+		margin-top: 20px
+		color: rgb(119, 119, 119)
+		font-weight: 300
+		letter-spacing: 0.5px
+
+.border-effect
+	border: 0
+	padding: 7px 0
+	border-bottom: 1px solid #ccc
+
+.border-effect ~ .border-focus
+	position: absolute
+	bottom: 0
+	left: 50%
+	width: 0
+	height: 1px
+	background-color: #f7931e
+	transition: 0.4s
+
+.border-effect:focus ~ .border-focus
+	width: 100%
+	transition: 0.4s
+	left: 0
+
+.Cart, .CheckOut, .Order
+	background-color: white
+	padding-bottom: 10px
+
+.Cart .CartPcs
+	padding: 10px 0
+	color: grey
+	
+.PriceColor
+	color: #f66f04
+.primaryColor
+	color: #f66f04
+.Cart 
+	.CartPrice
+		font-size: 16px
+		color: #f66f04
+		text-align: right
+
+	.TotalPrice
+		text-align: right
+		display: inline-block
+		margin-left: 10px
+		font-weight: 500
+		font-size: 16px
+		color: #000
+		display: block
+		line-height: 18px
+
+		.price
+			color: #f66f04
+
+	.CartTitle
+		padding: 10px 25px
+		font-size: 20px
+		border-left: 5px solid #f7931e
+
+	.CartSubtitle
+		padding: 10px 30px
+
+.Order
+	width: 70%
+	.OrderTitle
+		padding: 10px 25px
+		font-size: 20px
+		border-left: 5px solid #f7931e
+	.OrderList
+		background-color: #fdfdfd
+		border: 1px solid #ccc
+		th
+			padding: 10px
+		td
+			padding: 10px
+			line-height: 1.5
+
+	.OrderContent
+		background-color: rgb(253, 227, 167)
+		padding: 10px
+		border: 1px solid rgb(244, 179, 80)
+		border-radius: 5px
+
+	.btnConfirmOrder
+		color: $whiteColor
+		border-radius: 2px
+		width: 126px
+		padding: 5px 10px
+		text-align: center
+		margin: 15px 0
+		margin-bottom: 0
+		transition: all 0.2s ease-out
+		border: 1px solid #2b455c
+		background-color: #2b455c
+
+	.btnCancelOrder
+		background-color: #ffffff
+		color: #f7931e
+		border-radius: 2px
+		width: 126px
+		padding: 5px 10px
+		text-align: center
+		margin: 15px 0
+		margin-bottom: 0
+		border: 1px solid #f7931e
+		transition: all 0.2s ease-out
+	.btnWaitingOrder
+		color: $whiteColor
+		border-radius: 2px
+		padding: 5px 10px
+		text-align: center
+		margin: 15px 0
+		margin-bottom: 0
+		border: 1px solid #c5c5c5
+		cursor: pointer
+		pointer-events: none
+		background-color: #c5c5c5
+
+	.btnView
+		background-color: transparent
+		color: #f7931e
+		border-radius: 2px
+		padding: 5px 10px
+		width: 105px
+		text-align: right
+		margin-bottom: 0
+		border: 1px solid #f7931e
+		transition: all 0.2s ease-out
+		cursor: pointer
+		float: right
+	.tableOrderDetail
+		background-color: $whiteColor
+		border-top: 1px solid #ccc
+		border-top-style: dashed
+.paymentProsess
+	padding: 10px 15px
+	li
+		margin: 10px 0
+
+.table
+	margin: 20px
+	width: calc(100% - 40px)
+	border-collapse: collapse
+	text-align: left
+	table
+		width: 100%
+.tableOrderDetail
+	background-color: #f5f5f5
+	margin: -10px -10px
+	width: calc( 100% + 20px)
+	font-size: 12px
+	border-left: solid 1px #ccc
+	border-right: solid 1px #ccc
+	td
+		margin: 0
+.Cart .table thead tr th
+	border-bottom: 1px solid #b6b5b5
+	padding: 10px
+
+.Cart .table td
+	padding: 10px
+
+.Cart .quantity
+	width: 45px
+	height: 30px
+	background-color: #ffffff
+	text-indent: 10px
+	border: solid 1px #e4e4e4
+	margin-bottom: 10px
+	font-family: sans-serif
+	font-size: 100%
+	line-height: 1.15
+	margin: 0
+.Cart .btnRemove
+	color: #e22e21
+
+.Cart .btnRemove:hover
+	opacity: 0.5
+
+.Cart .btnContinue
+	background-color: #f7931e
+	color: $whiteColor
+	border-radius: 2px
+	width: 126px
+	padding: 10px 22px
+	text-align: center
+	margin: 15px 0
+	margin-bottom: 0
+	border: 1px solid #f7931e
+	transition: all 0.2s ease-out
+
+.Cart .btnContinue:hover
+	border-color: #FF8800
+	color: #ffffff
+	background-color: #FF8800
+
+.Cart .btnContinue-invert
+	background-color: #ffffff
+	color: #f7931e
+	border-radius: 2px
+	width: 126px
+	padding: 10px 22px
+	text-align: center
+	margin: 15px 0
+	margin-bottom: 0
+	border: 1px solid #f7931e
+	transition: all 0.2s ease-out
+
+.Cart .btnContinue-invert:hover
+	border-color: #FF8800
+	color: #FF8800
+	background-color: #f5f5f5
+
+.Cart .btnCheckOut
+	color: $whiteColor
+	border-radius: 2px
+	width: 126px
+	padding: 10px 10px
+	text-align: center
+	margin: 15px 0
+	margin-bottom: 0
+	border: 1px solid #2b455c
+	background-color: #2b455c
+
+.Cart .btnCheckOut:hover
+	opacity: 0.8
+
+.shipAddress
+	p
+		margin: 10px 0
+
+.Amount
+	padding: 10px
+	background-color: #f1c40f
+	margin-top: 20px
+	display: inline-block
+.bankList
+	width: 100%
+	display: block
+	overflow: hidden
+	margin: 0 -10px
+	li
+		float: left
+		margin: 10px
+.bank
+	.bankLogo
+		img
+			height: 40px
+	.bankName
+		margin: 5px 0
+		font-weight: bold
+	.bankKCP
+		margin: 5px 0
+	.bankAccountNumber
+		margin: 5px 0
+.notAuth
+	background-color: white
+	padding: 20px
+	text-align: center
+	line-height: 1.5
+
+	.notAuthLogo 
+		img
+			width: 100px
+			margin: 20px
+
+	.AuthButton 
+		margin: 15px 0
+
+	#btnLogin
+		background-color: #ff5722
+		color: $whiteColor
+		border-radius: 2px
+		width: 126px
+		padding: 10px 15px
+		text-align: center
+		margin: 10px
+		margin-bottom: 0
+		border: 1px solid #ff5722
+
+	#btnLogin:hover
+		border-color: #ff5722
+		color: #ff5722
+		background-color: $whiteColor
+
+	#btnRegister
+		border-radius: 2px
+		width: 126px
+		padding: 10px 15px
+		text-align: center
+		margin: 10px
+		color: #ff5722
+		border: 1px solid #ff5722
+
+	#btnRegister:hover
+		background-color: #f1f1f1
+		border: 1px solid #ff5722
+
+.rating
+	position: absolute
+	background-color: transparent
+	margin-left: -90px
+
+.rating > i 
+	display: inline-block
+	overflow: hidden
+	color: #ffb222
+
+.rating-back
+	width: 90px
+
+.rating-back > i 
+	display: inline-block
+	overflow: hidden
+	color: #c3c3c3
+
+/* Review */
+.ReviewContainer
+	padding: 10px
+
+	.ReviewListItem
+		max-height: 300px
+		overflow-y: scroll
+	.ReviewItem
+		border-top: 1px solid #dddddd
+	.ReviewHeader
+		padding: 10px 0
+
+	.ReviewRating
+		display: inline-block
+		width: 50%
+		height: 12px
+		overflow: hidden
+		font-size: 12px
+		color: #808080
+		text-align: left
+		padding: 5px 0
+
+	.ReviewDate
+		display: inline-block
+		width: 50%
+		height: 12px
+		overflow: hidden
+		font-size: 12px
+		color: #808080
+		text-align: right
+		padding: 5px 0
+
+	.ReviewBy
+		font-size: 12px
+		line-height: 1.5
+		color: #808080
+
+	.ReviewText
+		margin: 8px 0 16px
+		overflow: hidden
+		word-wrap: break-word
+		line-height: 16px
+		font-size: 13px
+		color: #555
+
+	.ReviewStar
+		background-color: transparent
+		
+		.enable
+			color: #ffb222
+
+		.disable
+			color: #c3c3c3
+
+	.ReviewStar > i 
+		display: inline-block
+		overflow: hidden
+		
+	.ReviewBox
+		border-top: 1px solid #ff5722
+
+	.GiveReviewTitle
+		margin: 10px 0
+		color: #818181
+
+	.txtReview
+		width: calc( 100% - 20px)
+		min-width: calc( 100% - 20px)
+		max-width: calc( 100% - 20px)
+		max-height: 200px
+		min-height: 100px
+		padding: 10px
+		outline: none
+		font-size: 14px
+		border-radius: 2px
+		border: solid 1px #ddd
+
+	.cmbBoxStar
+		display: inline-block
+
+		.cmbStar
+			background-color: transparent
+			height: 20px
+			outline: none
+			border: none
+			color: #818181
+
+	.btnReview
+		display: inline-block
+		border-radius: 2px
+		width: 126px
+		padding: 5px 10px
+		text-align: center
+		margin: 15px 0
+		color: #ff5722
+		border: 1px solid #ff5722
+		background-color: white
+		cursor: pointer
+
+	.btnReview:hover
+		background-color: rgb(240, 238, 238)
+
+	.ReviewRole
+		background-color: #2ab4c2
+		text-transform: lowercase
+		border-radius: 3px
+		font-weight: 400
+		margin-left: 5px
+		padding: 2px 4px
+		font-size: 12px
+		color: #fff
+		border: 1px solid transparent
+		vertical-align: baseline
+
+	.ReviewRoleAdmin
+		background-color: #8e44ad
+		text-transform: lowercase
+		border-radius: 3px
+		font-weight: 400
+		margin-left: 5px
+		padding: 2px 4px
+		font-size: 12px
+		color: #fff
+		border: 1px solid transparent
+		vertical-align: baseline

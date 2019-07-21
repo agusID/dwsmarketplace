@@ -1,0 +1,48 @@
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1; }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1; }
+  100% {
+    transform: scale(90, 90);
+    opacity: 0; } }
+@-webkit-keyframes menu {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes slider {
+  0%, 19% {
+    margin-left: 0; }
+  20%, 39% {
+    margin-left: -100%; }
+  40%, 59% {
+    margin-left: -200%; }
+  60%, 79% {
+    margin-left: -100%; }
+  80%, 99% {
+    margin-left: 0; }
+  100% {
+    margin-left: 0; } }
+@-webkit-keyframes slider {
+  0%, 18% {
+    margin-left: 0; }
+  20%, 38% {
+    margin-left: -100%; }
+  40%, 58% {
+    margin-left: -200%; }
+  60%, 78% {
+    margin-left: -100%; }
+  80%, 98% {
+    margin-left: 0; }
+  100% {
+    margin-left: 0; } }
+@keyframes fade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/*# sourceMappingURL=animate.css.map */
