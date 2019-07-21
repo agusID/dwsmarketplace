@@ -5,6 +5,7 @@ class MyController{
 	public function __construct(){
 		
 	}
+
 	public function redirect($location){
 		echo "<script>document.location.href='".$location."'</script>";
 	}
@@ -40,11 +41,8 @@ class MyController{
 
 			$this->message('Welcome back, '.$_SESSION['username']);
 			$this->redirect($to);
-		}else{
-			// echo $sql;
-			//$this->redirect($to);
+		}else
 			$this->message('Incorrect Email or Password!');
-		}
 	}
 	
 	public function doLogout(){
@@ -67,15 +65,10 @@ class MyController{
 		$sql = rtrim($sql, ", ");
 		$run = mysqli_query($db, $sql);
 
-		if($run > 0){
-			// echo $sql;
-			if(!empty($to)){
-				$this->redirect($to);
-			}
-		}else{
+		if($run > 0 && !empty($to))
+			$this->redirect($to);
+		else
 			$this->message('Invalid to save the data');
-			// echo $sql;
-		}
 	}
 
 	function update($db, array $data, $table, $id, $get,  $to){
@@ -87,13 +80,11 @@ class MyController{
 
 		$sql = rtrim($sql, ", ");
 		$sql = $sql." WHERE $id = '$get'";
-		$jalan = mysqli_query($db, $sql);
-		if($jalan > 0){
+		$run = mysqli_query($db, $sql);
+		if($run > 0)
 			$this->redirect($to);
-		}else{
+		else
 			$this->message('Invalid to update the data');
-			//echo $sql;
-		}
 	}
 
 	public function delete($db, $table, $id, $get, $to){
@@ -137,9 +128,9 @@ class MyController{
 		if(@$_GET['page']==""){
 			$position = 0;
 			$_GET['page'] = 1;
-		}else{
+		}else
 			$position = ($_GET['page'] - 1) * $limit;
-		}
+		
 		return $position;	
 	}
 
