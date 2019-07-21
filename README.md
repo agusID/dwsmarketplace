@@ -1,4 +1,4 @@
-![dwsmarketplace](https://github.com/agusID/dwsmarketplace/blob/master/assets/images/brand.png | width=200)
+![dwsmarketplace](https://github.com/agusID/dwsmarketplace/blob/master/assets/images/brand.png)
 ---
 
 [![php](https://img.shields.io/badge/build-php-red.svg)]()
