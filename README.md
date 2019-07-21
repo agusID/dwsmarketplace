@@ -1,4 +1,4 @@
-![dwsmarketplace](https://github.com/agusID/dwsmarketplace/blob/master/assets/images/brand.png)
+![dwsmarketplace](docs/brand.png?raw=true "dwsmarketplace brand")
 ---
 
 [![php](https://img.shields.io/badge/build-php-red.svg)]()
