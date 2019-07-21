@@ -238,9 +238,7 @@ CREATE TABLE `MsUser` (
 --
 
 INSERT INTO `MsUser` (`UserID`, `UserName`, `UserEmail`, `UserPassword`, `UserPhone`, `UserAddress`, `UserRole`, `created_at`, `updated_at`) VALUES
-(4, 'Dwi Agustianto', 'dwiagus105@gmail.com', '2e3b95f861f9685e17c4bb5c356881b7', '087874061070', 'Jalan Kebon Jeruk Raya No.27, RT.1/RW.9, Kebon Jeruk, RT.3/RW.6, Sukabumi Utara, Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11530', 'Customer', '2017-12-15 07:19:48', '2017-12-15 07:19:48'),
-(5, 'Agus', 'agus@gmail.com', '2e3b95f861f9685e17c4bb5c356881b7', '087874061070', NULL, 'Admin', '2017-12-15 07:21:28', '2017-12-15 07:21:28'),
-(19, 'Agustian', 'agustian@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '087874061070', 'Jl. raya puncak', 'Customer', '2018-01-03 09:58:37', '2018-01-03 09:58:37');
+(5, 'Test', 'test@gmail.com', '2e3b95f861f9685e1734bb2c356831b7', '082234031070', NULL, 'Admin', '2017-12-15 07:21:28', '2017-12-15 07:21:28'),
 
 -- --------------------------------------------------------
 
