@@ -12,11 +12,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shorcut icon" href="../assets/images/pavicon.png" />
-<link rel="stylesheet" href="../assets/css/agus.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Dwi Agustianto">
+	<link rel="shorcut icon" href="../assets/images/pavicon.png" />
+	<link rel="stylesheet" href="../assets/css/agus.css" />
 
-<title>DWSMarketplace | Login Administrator</title>
+	<title>DWSMarketplace | Login Administrator</title>
 
 </head>
 

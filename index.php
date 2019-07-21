@@ -1,3 +1,6 @@
+<!-- 
+	Created by Dwi Agustianto
+ -->
 <?php
 
 	require_once "config/dbConfig.php";
@@ -13,6 +16,7 @@
 
 	<title>Belanja Online Aman, Nyaman, Terpercaya | DWSMarketplace</title>
 	<meta name="robots" content="noindex">
+	<meta name="author" content="Dwi Agustianto">
 	<link rel="shorcut icon" href="assets/images/pavicon.png" />
 	<link rel="stylesheet" href="assets/css/agus.css" />
 	<link rel="stylesheet" href="assets/css/glyphicon.css" />
