@@ -147,6 +147,7 @@ class MyController{
 		}else{
 			echo "<span class=disabled><i class='glyphicon glyphicon-chevron-left'></i> Prev</span>";
 		}
+
 		for($i = 1; $i <= $total_page; $i++){
 			if($i != $active_page){
 				echo "<span class='current_aktif'><a href=".$file."page=$i>$i</a></span>";	
