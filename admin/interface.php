@@ -40,7 +40,6 @@
 				<img onmousedown="return false;" src="../assets/images/brand.png" />
 			</a>
 		</li>
-        <!-- <li><a href="category"><i class="glyphicon glyphicon-bell"></i></a></li> -->
     </ul>
 </nav>
 <div class="sidebar">
